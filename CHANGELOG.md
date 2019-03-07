@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2019-03-06
+
 ## 2019/03/01
 
 ### Changed
@@ -111,4 +113,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [#126]: https://github.com/gizak/termui/pull/126
 
-[Unreleased]: https://github.com/gizak/termui/compare/v2.3.0...HEAD
+[Unreleased]: https://github.com/gizak/termui/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/gizak/termui/compare/v2.3.0...HEAD
