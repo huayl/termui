@@ -39,7 +39,7 @@ func NewGrid() *Grid {
 
 // NewCol takes a height percentage and either a widget or a Row or Column
 func NewCol(ratio float64, i ...interface{}) GridItem {
-	_, ok := i[0].(Drawable)
+	_, ok := i[0].(Renderable)
 	entry := i[0]
 	if !ok {
 		entry = i
@@ -54,7 +54,7 @@ func NewCol(ratio float64, i ...interface{}) GridItem {
 
 // NewRow takes a width percentage and either a widget or a Row or Column
 func NewRow(ratio float64, i ...interface{}) GridItem {
-	_, ok := i[0].(Drawable)
+	_, ok := i[0].(Renderable)
 	entry := i[0]
 	if !ok {
 		entry = i
@@ -137,7 +137,7 @@ func (self *Grid) Draw(buf *Buffer) {
 	height := float64(self.Dy()) + 1
 
 	for _, item := range self.Items {
-		entry, _ := item.Entry.(Drawable)
+		entry, _ := item.Entry.(Renderable)
 
 		x := int(width*item.XRatio) + self.Min.X
 		y := int(height*item.YRatio) + self.Min.Y

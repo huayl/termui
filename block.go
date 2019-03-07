@@ -11,7 +11,7 @@ import (
 
 // Block is the base struct inherited by most widgets.
 // Block manages size, position, border, and title.
-// It implements all 3 of the methods needed for the `Drawable` interface.
+// It implements all 3 of the methods needed for the `Renderable` interface.
 // Custom widgets will override the Draw method.
 type Block struct {
 	Border      bool
@@ -76,7 +76,7 @@ func (self *Block) drawBorder(buf *Buffer) {
 	}
 }
 
-// Draw implements the Drawable interface.
+// Draw implements the Renderable interface.
 func (self *Block) Draw(buf *Buffer) {
 	if self.Border {
 		self.drawBorder(buf)
@@ -88,7 +88,7 @@ func (self *Block) Draw(buf *Buffer) {
 	)
 }
 
-// SetRect implements the Drawable interface.
+// SetRect implements the Renderable interface.
 func (self *Block) SetRect(x1, y1, x2, y2 int) {
 	self.Rectangle = image.Rect(x1, y1, x2, y2)
 	self.Inner = image.Rect(
@@ -99,7 +99,7 @@ func (self *Block) SetRect(x1, y1, x2, y2 int) {
 	)
 }
 
-// GetRect implements the Drawable interface.
+// GetRect implements the Renderable interface.
 func (self *Block) GetRect() image.Rectangle {
 	return self.Rectangle
 }

@@ -11,14 +11,14 @@ import (
 	tb "github.com/nsf/termbox-go"
 )
 
-type Drawable interface {
+type Renderable interface {
 	GetRect() image.Rectangle
 	SetRect(int, int, int, int)
 	Draw(*Buffer)
 	sync.Locker
 }
 
-func Render(items ...Drawable) {
+func Render(items ...Renderable) {
 	for _, item := range items {
 		buf := NewBuffer(item.GetRect())
 		item.Lock()
