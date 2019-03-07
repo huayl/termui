@@ -15,7 +15,7 @@ termui is a cross-platform and fully-customizable terminal dashboard and widget 
 ## Installation
 
 ```bash
-go get github.com/gizak/termui
+go get github.com/gizak/termui/v3
 ```
 
 ## Hello World
